@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!{% endblock %}
+
+{% block body %}
+<style>
+    body {text-align: center;}
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; float: left;}
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    a { margin: 1em; height: 5em; width: 15em; line-height: 5em; text-align: center;}
+    .btn-success {height: 12em;}
+    img {float: left; margin: auto; height: 35em; width: 50%; margin: 1em auto; position: relative; right: 15%;}
+</style>
+
+<h1>ACCUEIL</h1>
+
+<p>FOOTBALL MANAGER</p>
+
+<div class="example-wrapper d-flex flex-column justify-content-between">
+  <a class="btn btn-primary" href="/create" role="button">Créer Nouvelle Equipe</a>
+  <a class="btn btn-primary" href="/equipe" role="button">Selectionner Equipe</a>
+  <a class="btn btn-success" href="#" role="button">Nouvelle Saison</a>
+  <a class="btn btn-primary" href="/history" role="button">Historique</a>
+</div>
+<img class="rounded mx-auto d-block" src="https://media.istockphoto.com/id/522384208/fr/photo/football-contre-les-supporters-dans-le-stade.jpg?s=612x612&w=0&k=20&c=Xw_2e57UGWLYZYXInqUlqKV0StYzdCx8MmKXfzXOPoc=">
+{% endblock %}

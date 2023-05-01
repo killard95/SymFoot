@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des équipes{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        table {text-align: center;}
+    </style>
+
+    <div class="example-wrapper">
+        <h1>LISTE DES EQUIPES</h1>
+        <a class="btn btn-primary" href="/" role="button">Retour à l'accueil</a>
+
+            <table class="table table-striped table-hover table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Ville</th>
+                        <th scope="col">Budget</th>
+                        <th scope="col">Renommée</th>
+                        <th scope="col">Selection</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <form method="GET" action="#">
+                {% for equipe in equipes %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ equipe.nom }}</td>                    
+                        <td>{{ equipe.ville }}</td>
+                        <td>{{ budget[loop.index-1] }} €</td>                    
+                        <td>{{ renommee[loop.index-1] }}</td>
+                        <td><input type="checkbox" name="selectedTeam"></td>
+                    </tr>
+                {% endfor %}
+                <button>Submit</button>
+                </form>
+            </tbody>
+        </table>
+        dump($_GET)
+    </div>
+{% endblock %}

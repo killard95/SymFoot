@@ -1,0 +1,176 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des joueurs{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        caption { background-color: black; color: white; text-align: center;}
+    </style>
+
+    <div class="example-wrapper">
+        <h1>LISTE DES AVANT</h1>
+        <a class="btn btn-primary" href="/" role="button">Retour à l'accueil</a>
+
+            <table class="table table-striped table-hover table-bordered table-dark caption-top">
+                <caption>
+                    AVANT
+                </caption>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Equipe</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Poste</th>
+                        <th scope="col">Vitesse</th>
+                        <th scope="col">Dribble</th>
+                        <th scope="col">Tir</th>
+                        {# <th scope="col">Arret</th> #}
+                        <th scope="col">Renommée</th>
+                        <th scope="col">Salaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                {% for avant in avants %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ nomEquipe[loop.index-1] }}</td>                    
+                        <td>{{ avant.nom }}</td>                    
+                        <td>{{ avant.poste }}</td>
+                        <td>{{ avant.vitesse }} /100</td>
+                        <td>{{ avant.dribble }} /100</td>
+                        <td>{{ avant.tir }} /100</td>
+                        {# {% if joueur.poste == "Goal" %}
+                        <td>{{ joueur.arret }} /100</td>
+                        {% else %}
+                        <td>/</td>
+
+                        {% endif %} #}
+                        <td>{{ avant.renommee }}</td>
+                        <td>{{ avant.salaire }} €</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <table class="table table-striped table-hover table-bordered table-dark caption-top">
+                <caption>
+                    MILIEU
+                </caption>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Equipe</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Poste</th>
+                        <th scope="col">Vitesse</th>
+                        <th scope="col">Dribble</th>
+                        <th scope="col">Tir</th>
+                        {# <th scope="col">Arret</th> #}
+                        <th scope="col">Renommée</th>
+                        <th scope="col">Salaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                {% for milieu in milieux %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ nomEquipe[loop.index-1] }}</td>                    
+                        <td>{{ milieu.nom }}</td>                    
+                        <td>{{ milieu.poste }}</td>
+                        <td>{{ milieu.vitesse }} /100</td>
+                        <td>{{ milieu.dribble }} /100</td>
+                        <td>{{ milieu.tir }} /100</td>
+                        {# {% if joueur.poste == "Goal" %}
+                        <td>{{ joueur.arret }} /100</td>
+                        {% else %}
+                        <td>/</td>
+
+                        {% endif %} #}
+                        <td>{{ milieu.renommee }}</td>
+                        <td>{{ milieu.salaire }} €</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <table class="table table-striped table-hover table-bordered table-dark caption-top">
+                <caption>
+                    ARRIERE
+                </caption>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Equipe</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Poste</th>
+                        <th scope="col">Vitesse</th>
+                        <th scope="col">Dribble</th>
+                        <th scope="col">Tir</th>
+                        {# <th scope="col">Arret</th> #}
+                        <th scope="col">Renommée</th>
+                        <th scope="col">Salaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                {% for arriere in arrieres %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ nomEquipe[loop.index-1] }}</td>                    
+                        <td>{{ arriere.nom }}</td>                    
+                        <td>{{ arriere.poste }}</td>
+                        <td>{{ arriere.vitesse }} /100</td>
+                        <td>{{ arriere.dribble }} /100</td>
+                        <td>{{ arriere.tir }} /100</td>
+                        {# {% if joueur.poste == "Goal" %}
+                        <td>{{ joueur.arret }} /100</td>
+                        {% else %}
+                        <td>/</td>
+
+                        {% endif %} #}
+                        <td>{{ arriere.renommee }}</td>
+                        <td>{{ arriere.salaire }} €</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <table class="table table-striped table-hover table-bordered table-dark caption-top">
+                <caption>
+                    GOAL
+                </caption>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Equipe</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Poste</th>
+                        <th scope="col">Vitesse</th>
+                        <th scope="col">Dribble</th>
+                        <th scope="col">Tir</th>
+                        <th scope="col">Arret</th>
+                        <th scope="col">Renommée</th>
+                        <th scope="col">Salaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                {% for goal in goals %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ nomEquipe[loop.index-1] }}</td>                    
+                        <td>{{ goal.nom }}</td>                    
+                        <td>{{ goal.poste }}</td>
+                        <td>{{ goal.vitesse }} /100</td>
+                        <td>{{ goal.dribble }} /100</td>
+                        <td>{{ goal.tir }} /100</td>
+                        <td>{{ goal.arret }} /100</td>
+                        <td>{{ goal.renommee }}</td>
+                        <td>{{ goal.salaire }} €</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
